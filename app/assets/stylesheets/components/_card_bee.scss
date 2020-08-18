@@ -1,8 +1,14 @@
-#card-bee-title {
-  font-family: $body-font;
-
+.card-bee {
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px gray;
 }
 
-#card-bee {
-   border-radius: 10px !important;
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#card-bee-title {
+  font-family: $body-font;
+  border-radius: 8px;
 }
