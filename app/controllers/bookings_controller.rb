@@ -17,6 +17,17 @@ class BookingsController < ApplicationController
 			render :new
 		end
   end
+
+  def flip_accepted
+    @booking = Booking.find(params[:id])
+    if @booking.accepted = true
+       @booking.accepted = false
+    else
+      @booking.accepted = false
+       @booking.accepted = true
+    end
+    redirect_to bee_path(@bee)
+  end
   
   private
 

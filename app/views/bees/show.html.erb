@@ -1,3 +1,4 @@
+
 <h1><%= @bee.name %> is a great bee!</h1>
 <h3>owned by <%= @bee.user.name %></h3>
 <p><%= @bee.description %></p>
@@ -5,6 +6,10 @@
 
 <ul class="list-group">
   <% @bee.bookings.each do |booking| %>
-    <li class="list-group-item"><%= booking.start_date %> - <%= booking.end_date %> <%= link_to "Confirm booking", bees_path, class: "btn btn-warning" %></li>
+  <% unless booking.accepted == true %>
+  <li class="list-group-item">A booking has been requested between <%= booking.start_date %> and <%= booking.end_date %> by <%= booking.user.name %> <%= link_to "Confirm booking", bees_path, class: "btn btn-warning" %></li>
+  <% else %>
+  <li class="list-group-item">A booking between <%= booking.start_date %> and <%= booking.end_date %> by <%= booking.user.name %> ✅ </li>
+  <% end %>
   <% end %>
 </ul>

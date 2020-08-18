@@ -1,46 +1,46 @@
 class BeesController < ApplicationController
 
-	def index
-		@bees = Bee.all
-	end
-	
-	def new
-		@bee = Bee.new
-	end
+  def index
+    @bees = Bee.all
+  end
 
-		def create
-			@bee = Bee.new(bee_params)
-			@bee.user_id = current_user.id
-				if	@bee.save
-					redirect_to bee_path(@bee)
-				else
-					render :new
-				end
-		end
+  def new
+    @bee = Bee.new
+  end
 
-		def show
-			@bee = Bee.find(params[:id])
+    def create
+      @bee = Bee.new(bee_params)
+      @bee.user_id = current_user.id
+        if  @bee.save
+          redirect_to bee_path(@bee)
+        else
+          render :new
+        end
     end
-    
-	def create
-		@bee = Bee.new(bee_params)
-		@bee.user_id = current_user.id
-		if	@bee.save
-			redirect_to bee_path(@bee)
-		else
-			render :new
 
-		end
-	end
+    def show
+      @bee = Bee.find(params[:id])
+    end
 
-	def show 
-		@bee = Bee.find(params[:id])
-	end
+  def create
+    @bee = Bee.new(bee_params)
+    @bee.user_id = current_user.id
+    if  @bee.save
+      redirect_to bee_path(@bee)
+    else
+      render :new
 
-	private
+    end
+  end
 
-	def bee_params 
-		params.require(:bee).permit(:name, :description, :user_id)
-	end
+  def show
+    @bee = Bee.find(params[:id])
+  end
+
+  private
+
+  def bee_params
+    params.require(:bee).permit(:name, :description, :user_id)
+  end
 
 end
