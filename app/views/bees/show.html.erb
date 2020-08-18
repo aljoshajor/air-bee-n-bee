@@ -5,6 +5,6 @@
 
 <ul class="list-group">
   <% @bee.bookings.each do |booking| %>
-    <li class="list-group-item"><%= booking.start_date %> - <%= booking.end_date %> </li>
+    <li class="list-group-item"><%= booking.start_date %> - <%= booking.end_date %> <%= link_to "Confirm booking", bees_path, class: "btn btn-warning" %></li>
   <% end %>
 </ul>
