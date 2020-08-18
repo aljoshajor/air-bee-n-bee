@@ -1,10 +1,11 @@
 class BeesController < ApplicationController
-	def index		
-		end
 
-		def new
-			@bee = Bee.new
-		end
+	def index		
+	end
+
+	def new
+		@bee = Bee.new
+	end
 
 		def create
 			@bee = Bee.new(bee_params)
