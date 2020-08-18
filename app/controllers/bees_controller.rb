@@ -1,6 +1,7 @@
 class BeesController < ApplicationController
 
-	def index		
+	def index
+    @bees = Bee.all
 	end
 
 	def new
@@ -17,14 +18,14 @@ class BeesController < ApplicationController
 				end
 		end
 
-		def show 
+		def show
 			@bee = Bee.find(params[:id])
 		end
 
 
 		private
 
-		def bee_params 
+		def bee_params
 			params.require(:bee).permit(:name, :description, :user_id)
 		end
 end
