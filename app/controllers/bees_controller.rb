@@ -1,5 +1,6 @@
 class BeesController < ApplicationController
-	def index		
+	def index
+		@bees = Bee.all
 	end
 	
 	def new
