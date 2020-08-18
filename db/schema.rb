@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_144411) do
+ActiveRecord::Schema.define(version: 2020_08_18_085612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,22 +18,22 @@ ActiveRecord::Schema.define(version: 2020_08_17_144411) do
   create_table "bees", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_bees_on_users_id"
+    t.index ["user_id"], name: "index_bees_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "bees_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "bee_id", null: false
     t.date "start_date"
     t.date "end_date"
     t.boolean "accepted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["bees_id"], name: "index_bookings_on_bees_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["bee_id"], name: "index_bookings_on_bee_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_144411) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bees", "users", column: "users_id"
-  add_foreign_key "bookings", "bees", column: "bees_id"
-  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "bees", "users"
+  add_foreign_key "bookings", "bees"
+  add_foreign_key "bookings", "users"
 end
