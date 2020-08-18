@@ -7,5 +7,35 @@
   </div>
 </div>
 
-<%= render 'shared/card_bee' %>
+
+
 <!-- >>>>>>> c730741619c0127f1af4cdcf68f65c9609e242df -->
+<div class="container">
+  <div class="row">
+  <% @bees.each do |bee| %>
+<div class="col-12 col-md-6 col-lg-3 pt-3 pb-2 mr-3">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="<%= image_path('bee-face.jpg') %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
+          <p class="card-text"><%= bee.description %>.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
