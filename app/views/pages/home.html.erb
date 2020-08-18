@@ -1,7 +1,7 @@
 
 <div class="banner" style="background-image: url('<%= image_path 'big.jpg' %>')">
   <div class="banner-content">
-    <h1>Welcome to air-bee-n-bee!</h1>
+    <h1>welcome to air-bee-n-bee!</h1>
     <p><strong>Bee ready to get buzzed by our Bees!</strong></p>
       <%#= link_to 'See all Bees', root_path, class: "btn btn-primary" %>
   </div>
@@ -13,8 +13,8 @@
 <div class="container">
 <div class="d-flex flex-wrap justify-content-around">
   <% @bees.each do |bee| %>
-    <div class="card mt-3 mb-3" style="width: 18rem;">
-        <img class="card-img-top" src="<%= image_path('bee-face.jpg') %>" alt="Card image cap">
+    <div class="card card-bee mt-3 mb-3" style="width: 18rem;">
+        <div><img class="card-img-top" src="<%= image_path('bee-face.jpg') %>" alt="Card image cap"></div>
         <div class="card-body">
           <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
           <p class="card-text"><%= bee.description %>.</p>
