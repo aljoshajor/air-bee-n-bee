@@ -4,6 +4,7 @@
 <p><%= @bee.description %></p>
 
  <a> <%= link_to 'Back to Hompage', root_path, class: "btn btn-primary" %></a>
+  <%= link_to 'See all Bees', bees_path, class: "btn btn-black" %>
     <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
 <br><br>
 <ul class="list-group">
