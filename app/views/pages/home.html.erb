@@ -7,6 +7,7 @@
   </div>
 </div>
 
+
 <div class="card mission-card" style="width: 40rem;">
   <div class="card-body">
     <h3 class="card-title">Bee Inspired</h3>
@@ -15,21 +16,24 @@ These amazing little buggers are not only full of surprises but also tantamount 
     <a href="#" class="btn bt-black">See all Bees</a>
   </div>
 </div>
-
-
-<!-- >>>>>>> c730741619c0127f1af4cdcf68f65c9609e242df -->
+<% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
+<% counter = 1 %>
+<p class="text-center">check out our featured bees</p>
 <div class="container">
 <div class="d-flex flex-wrap justify-content-around">
   <% @bees.each do |bee| %>
+  <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
+  <% break if counter == 4 %>
     <div class="card card-bee mt-3 mb-3" style="width: 18rem;">
-        <div><img class="card-img-top" src="<%= image_path('cool-bee.jpg') %>" alt="Card image cap"></div>
+        <div><%= image_tag "#{beepic.sample}", alt: "alttext", class: "card-img-top", height:'250px', width:'100%'%></div>
         <div class="card-body">
           <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
           <p class="card-text"><%= bee.description %>.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
         </div>
     <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
       </div>
+      <% counter += 1 %>
   <% end %>
 </div>
 </div>
