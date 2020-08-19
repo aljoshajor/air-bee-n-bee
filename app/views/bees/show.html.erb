@@ -3,6 +3,8 @@
 <h3>owned by <%= @bee.user.name %></h3>
 <p><%= @bee.description %></p>
 
+ <a> <%= link_to 'Back to Hompage', root_path, class: "btn btn-primary" %></a>
+    <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
 
 <ul class="list-group">
   <% @bee.bookings.each do |booking| %>

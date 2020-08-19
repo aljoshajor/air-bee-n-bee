@@ -1,4 +1,5 @@
 <% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
+  <%= link_to 'Add a new Bee', new_bee_path, class: "btn btn-primary" %>
 <div class="container">
 	<div class="d-flex flex-wrap justify-content-around">
 		<% @bees.each do |bee| %>
