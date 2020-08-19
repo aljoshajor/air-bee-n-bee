@@ -3,32 +3,52 @@
   <div class="banner-content">
     <h1>welcome to air-bee-n-bee!</h1>
     <p><strong>Bee ready to get buzzed by our Bees!</strong></p>
-      <%#= link_to 'See all Bees', root_path, class: "btn btn-primary" %>
-  </div>
-</div>
+    <%#= link_to 'See all Bees', root_path, class: "btn btn-primary" %>
+    <div class="container">
+      <div class="text-center  text-white">
+        <div class="rounded-bottom rounded-top" style=" opacity: 0.9; background: rgb(244,202,101) ">
 
+          <h8>Did you know that bees perform waggle dances in order to communicate with one another? Or that bees have a sense of smell 50 times more powerful than a dog’s? But hold your horses, there is more! Bees can build honeycombs in zero gravity and can be trained to located buried land mines!
+
+          </h8>
+          <h8>Without a doubt, bees are THE coolest tiny beings, and we think all of us should get to know them a little better. Check out our bees below and book your furry friend ASAP!</h8>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="text-center">
+<%= link_to 'See all Bees', bees_path, class: "btn btn-black" %>
+</div>
+</div>
+</div>
+<br>
+</div>
+<% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
 <% counter = 1 %>
 <p class="text-center">check out our featured bees</p>
-<!-- >>>>>>> c730741619c0127f1af4cdcf68f65c9609e242df -->
 <div class="container">
-<div class="d-flex flex-wrap justify-content-around">
-  <% @bees.each do |bee| %>
-  <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
-  <% break if counter == 4 %>
+  <div class="d-flex flex-wrap justify-content-around">
+    <% @bees.each do |bee| %>
+    <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
+    <% break if counter == 4 %>
     <div class="card card-bee mt-3 mb-3" style="width: 18rem;">
-        <div><img class="card-img-top" src="<%= image_path('cool-bee.jpg') %>" alt="Card image cap"></div>
-        <div class="card-body">
-          <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
-          <p class="card-text"><%= bee.description %>.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;">
+        <p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p>
       </div>
-      <% counter += 1 %>
-  <% end %>
+      <div>
+        <%= image_tag  image_path("#{beepic.sample}"), alt: "alttext", class: "card-img-top", height:'250px', width:'100%'%>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
+        <p class="card-text"><%= bee.description %>.</p>
+        <%= link_to 'View', bee_path(bee), class: "btn btn-primary" %>
+      </div>
+      <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
+    </div>
+    <% counter += 1 %>
+    <% end %>
+  </div>
 </div>
-</div>
-
-
-
 
