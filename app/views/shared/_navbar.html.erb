@@ -10,6 +10,8 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
     <!-- <ul class="navbar-nav mr-auto">
        <li>
          <%#= link_to "Home", new_user_session_path, class: "nav-link" %>
@@ -20,12 +22,24 @@
     </ul> -->
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+      <div class="navbar-home">
+          <div class = "navbar-home-home">
+            <li>
+              <%= link_to "Home", root_path, class: "nav-link" %>
+            </li>
+            <li>
+              <%= link_to "All our bees", bees_path, class: "nav-link" %>
+            </li>
+
+          </div>
+
+           <!--  Below code was standard from Le Wagon, Home and can be reactivated if we need Messages -->
+        <!-- <li class="nav-item active">
+          <%#= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
+          <%#= link_to "Messages", "#", class: "nav-link" %>
+        </li> -->
         <li class="nav-item dropdown">
           <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
           <%= image_tag image_path("beekeeper"), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
