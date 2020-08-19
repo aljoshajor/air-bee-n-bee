@@ -19,7 +19,7 @@
 
 </div>
 <div class="text-center">
-  <a href="#" class="btn bt-black">See all Bees</a>
+<%= link_to 'See all Bees', bees_path, class: "btn btn-black" %>
 </div>
 </div>
 </div>
@@ -34,7 +34,7 @@
     <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
     <% break if counter == 4 %>
     <div class="card card-bee mt-3 mb-3" style="width: 18rem;">
-      <div class="card-img-overlay text-white  text-center" style="width: 110px;">
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;">
         <p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p>
       </div>
       <div>
@@ -43,7 +43,7 @@
       <div class="card-body">
         <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
         <p class="card-text"><%= bee.description %>.</p>
-        <%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
+        <%= link_to 'View', bee_path(bee), class: "btn btn-primary" %>
       </div>
       <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
     </div>
