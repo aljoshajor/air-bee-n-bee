@@ -1,10 +1,22 @@
 .mission-card {
+  background-color: #f5cb5c;
   border-radius: 20px;
   box-shadow: 3px 3px 5px gray;
+  margin: -141px auto 10px auto;
   // box-shadow: 10px 30px rgba(0,0,0,0.1);
+  opacity: 0.9;
+p {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+
 }
 
-.bt-black {
+h3 {
+  font-size: 30px;
+}
+
+.btn {
   display: inline-block;
   border-radius: 20px;
   background: black;
@@ -16,9 +28,9 @@
   // font-family: $banner;
   font-family: 'Montserrat', sans-serif;
 
- .btn:hover {
+ &:hover {
   background: #f5cb5c;
   color: white;
-
  }
+}
 }
