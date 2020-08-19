@@ -7,6 +7,8 @@
   <%= link_to 'See all Bees', bees_path, class: "btn btn-black" %>
     <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
 <br><br>
+<%= button_to 'Like', bee_likes_path(@bee), method: :post %>
+<p><%= @bee.likes.count %> <%= (@bee.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <ul class="list-group">
   <% @bee.bookings.each do |booking| %>
   <% if booking.accepted == false %>
@@ -17,3 +19,5 @@
   <% end %>
 </ul>
 </div>
+
+

@@ -29,9 +29,21 @@
     <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
     <% break if counter == 4 %>
     <div class="card card-bee mt-3 mb-3" style="width: 18rem;">
-      <div class="card-img-overlay text-white  text-center" style="width: 120px;">
-        <p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p>
-      </div>
+      <% if bee.features == "Cool" %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #2cf4d6; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% elsif bee.features == "Funny" %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f265b7; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% elsif bee.features == "Dramatic" %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #bc64ef; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% elsif bee.features == "Interesting" %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #63a1ed; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% elsif bee.features == "Funky" %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% elsif bee.features == "Sexy" %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f28b65; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% else %>
+      <div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #65f2c5; opacity: 0.95"><%= bee.features.downcase %></p></div>
+      <% end %>
       <div>
         <%= image_tag  image_path("#{beepic.sample}"), alt: "alttext", class: "card-img-top", height:'250px', width:'100%'%>
       </div>
@@ -46,4 +58,5 @@
     <% end %>
   </div>
 </div>
+
 

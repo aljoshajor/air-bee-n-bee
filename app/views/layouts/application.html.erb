@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag 'beeenbeee.png' %>
     <title>AirBeeNBee</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,7 +15,6 @@
   <body>
     
     <%= render 'shared/navbar' %>
-
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
