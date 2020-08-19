@@ -8,8 +8,8 @@ class BookingsController < ApplicationController
   def create
 	  @booking = Booking.new(booking_params)
     @bee = Bee.find(params[:bee_id])
-    @booking.bee_id = @bee.id
-    @booking.user_id = current_user.id
+    @booking.bee = @bee
+    @booking.user = current_user
     @booking.accepted = false 
 		if	@booking.save
 			redirect_to bee_path(@bee)
@@ -18,14 +18,11 @@ class BookingsController < ApplicationController
 		end
   end
 
-  def flip_accepted
+  def update
     @booking = Booking.find(params[:id])
-    if @booking.accepted = true
-       @booking.accepted = false
-    else
-      @booking.accepted = false
-       @booking.accepted = true
-    end
+    @bee = @booking.bee
+    @booking.accepted = !@booking.accepted
+    @booking.save
     redirect_to bee_path(@bee)
   end
   

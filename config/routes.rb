@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :bees do
     resources :bookings, only: [:new, :create]
-    patch 'bookings/:id', to: 'bookings#flip_accepted', as: 'flip'
   end
+  resources :bookings, only: [:update]
 
 
 	# get 'bees/new', to: 'bees#new'
