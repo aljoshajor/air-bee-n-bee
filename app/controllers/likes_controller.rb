@@ -3,7 +3,8 @@ class LikesController < ApplicationController
 
 	def create
 		if already_liked?
-			flash[:notice] = "You can't like a bee more than once"
+			flash.alert = "You can't like a bee more than once"
+
 		else
 			@bee.likes.create(user_id: current_user.id)
 			redirect_to bee_path(@bee)
