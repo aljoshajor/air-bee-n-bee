@@ -5,15 +5,15 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
     patch 'bookings/:id', to: 'bookings#flip_accepted', as: 'flip'
   end
-    
+
 
 	# get 'bees/new', to: 'bees#new'
 	# get 'bees/:id', to: 'bees#show', as: "bee"
 	# get 'bees', to: 'bees#index'
   # post 'bees', to: 'bees#create'
-  # get 'bookings/new', to: 'bookings#new'
+  # get 'bees/:id/bookings/new', to: 'bookings#new'
   # post 'bookings', to: 'bookings#create'
-	
+
 
 
 
