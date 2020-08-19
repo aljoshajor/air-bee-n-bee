@@ -1,0 +1,24 @@
+.mission-card {
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px gray;
+  // box-shadow: 10px 30px rgba(0,0,0,0.1);
+}
+
+.bt-black {
+  display: inline-block;
+  border-radius: 20px;
+  background: black;
+  color: #f5cb5c;
+  padding: 12px 22px;
+  // font-weight: bold;
+  border: 1.5px solid white;
+  opacity: 0.8;
+  // font-family: $banner;
+  font-family: 'Montserrat', sans-serif;
+
+ .btn:hover {
+  background: #f5cb5c;
+  color: white;
+
+ }
+}
