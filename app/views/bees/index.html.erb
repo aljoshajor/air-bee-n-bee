@@ -1,22 +1,41 @@
-<div class="banner" style="background-image: url('<%= image_path 'big.jpg' %>')">
-	<div class="banner-content">
-		<h1>Welcome to air-bee-n-bee!</h1>
-		<p><strong>Bee ready to get buzzed by our Bees!</strong></p>
-	</div>
-</div>
 
-<div class="container">
-	<div class="d-flex flex-wrap justify-content-around">
-		<% @bees.each do |bee| %>
-		<div class="card card-bee mt-3 mb-3" style="width: 18rem;">
-			<div><img class="card-img-top" src="<%= image_path('cool-bee.jpg') %>" alt="Card image cap"></div>
-			<div class="card-body">
-				<h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
-				<p class="card-text"><%= bee.description %>.</p>
-				<a href="#" class="btn btn-primary">Go somewhere</a>
+	<div class="container">
+
+		<div class="row">
+			<div class="BeeButton">
+				<%= link_to 'Add a new Bee', new_bee_path, class: "btn btn-primary" %>
 			</div>
-			<%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
+			<div>
+				<img src="<%= image_path('flyingBee.png') %>" class="beeicon">
+			</div>
 		</div>
-		<% end %>
+
+		<div class="row">
+			<div class="col-6">
+				<% @bees.each do |bee| %>
+				<div class="card card-bee mb-3"  style="max-width: 540px;">
+					<div class="row no-gutters">
+						<div class="col-md-4 rounded">
+						<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<img src="<%= image_path('cool-bee.jpg') %>" class="card-img" alt="Card image cap">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
+								<p class="card-text"><%= bee.description %>.</p>
+								<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+								<%= link_to "Details & Booking", bee_path(bee), class: "btn btn-primary" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>>
+		</div>
+
+				<div class="col-6">
+					<img class="index_map" src="<%= image_path('map_example.jpg') %>" alt="Card image cap">
+				</div>
+		</div>
 	</div>
-</div>
+
+
