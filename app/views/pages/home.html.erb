@@ -3,40 +3,56 @@
   <div class="banner-content">
     <h1>welcome to air-bee-n-bee!</h1>
     <p><strong>Bee ready to get buzzed by our Bees!</strong></p>
-      <%#= link_to 'See all Bees', root_path, class: "btn btn-primary" %>
+    <%#= link_to 'See all Bees', root_path, class: "btn btn-primary" %>
+    <div class="container">
+      <div class="text-center  text-white">
+        <div class="rounded-bottom rounded-top" style=" opacity: 0.9; background: rgb(244,202,101) ">
+
+          <h8>Did you know that bees perform waggle dances in order to communicate with one another? Or that bees have a sense of smell 50 times more powerful than a dog’s? But hold your horses, there is more! Bees can build honeycombs in zero gravity and can be trained to located buried land mines!
+
+          </h8>
+          <h8>Without a doubt, bees are THE coolest tiny beings, and we think all of us should get to know them a little better. Check out our bees below and book your furry friend ASAP!</h8>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
-
-
-<div class="card mission-card" style="width: 40rem;">
-  <div class="card-body">
-    <h3 class="card-title">Bee Inspired</h3>
-    <p class="card-text">Did you know that bees perform waggle dances in order to communicate with one another? Or that bees have a sense of smell 50 times more powerful than a dog’s? But hold your horses, there is more! Bees can build honeycombs in zero gravity and can be trained to located buried land mines!
-These amazing little buggers are not only full of surprises but also tantamount to our food supply; one third of the food we consume is the result bee pollination, and the practice of beekeeping dates back at least 4,500 years (in Greek mythology, Apollo is credited as the first beekeeper ever). Without a doubt, bees are THE coolest tiny beings, and we think all of us should get to know them a little better. Check out our bees below and book your furry friend ASAP!</p>
-    <a href="#" class="btn bt-black">See all Bees</a>
-  </div>
+<div class="text-center">
+  <a href="#" class="btn bt-black">See all Bees</a>
+</div>
+</div>
+</div>
+<br>
 </div>
 <% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
 <% counter = 1 %>
 <p class="text-center">check out our featured bees</p>
 <div class="container">
-<div class="d-flex flex-wrap justify-content-around">
-  <% @bees.each do |bee| %>
-  <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
-  <% break if counter == 4 %>
+  <div class="d-flex flex-wrap justify-content-around">
+    <% @bees.each do |bee| %>
+    <!-- CHANGE COUNTER NUMBER TO SHOW MORE/LESS BEES -->
+    <% break if counter == 4 %>
     <div class="card card-bee mt-3 mb-3" style="width: 18rem;">
-        <div><%= image_tag "#{beepic.sample}", alt: "alttext", class: "card-img-top", height:'250px', width:'100%'%></div>
-        <div class="card-body">
-          <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
-          <p class="card-text"><%= bee.description %>.</p>
-          <%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
-        </div>
-    <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
+      <div class="card-img-overlay text-white  text-center" style="width: 110px;">
+        <p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p>
       </div>
-      <% counter += 1 %>
-  <% end %>
+      <div>
+        <%= image_tag  image_path("#{beepic.sample}"), alt: "alttext", class: "card-img-top", height:'250px', width:'100%'%>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
+        <p class="card-text"><%= bee.description %>.</p>
+        <%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
+      </div>
+      <%#= image_tag image_path("bee-face.jpg"), class: "card-img-top"%>
+    </div>
+    <% counter += 1 %>
+    <% end %>
+  </div>
 </div>
-</div>
+
 
 
 
