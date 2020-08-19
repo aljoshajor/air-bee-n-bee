@@ -40,7 +40,7 @@ class BeesController < ApplicationController
   private
 
   def bee_params
-    params.require(:bee).permit(:name, :description, :user_id)
+    params.require(:bee).permit(:name, :description, :user_id, :features)
   end
 
 end
