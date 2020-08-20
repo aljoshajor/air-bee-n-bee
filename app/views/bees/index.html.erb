@@ -1,11 +1,7 @@
-	<% beepic = ['bee-big', '4', 'bee-face', 'snacking-bee', '11', '12', 'yellow-bumblebee', '2', '4', '5', '3', '9', '6', '8', '5', 'two-bees', 'tiny-bee', 'furry-bee'] %>
 
 	<div class="container">
 
 		<div class="row">
-			<div class="BeeButton">
-				<%= link_to 'Add a new Bee', new_bee_path, class: "btn btn-primary" %>
-			</div>
 			<div>
 				<img src="<%= image_path('flyingBee.png') %>" class="beeicon">
 			</div>
@@ -43,10 +39,10 @@
 						<div class="col-md-8">
 							<div class="card-body">
 								<h5 class="card-title" id="card-bee-title font-weight-bold"><%= bee.name.capitalize %></h5>
-								<p class="card-text"><%= bee.description %>. <br> <span class="font-weight-light"> Location: <%= bee.address %> </span></p> 
+								<p class="card-text"><%= bee.description %>. <br> <span class="font-weight-light"> Location: <%= bee.address %> </span></p>
 
 								<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
-								<%= link_to "Details & Booking", bee_path(bee), class: "btn btn-primary" %>
+								<%= link_to "View", bee_path(bee), class: "btn btn-primary" %>
 							</div>
 						</div>
 					</div>
