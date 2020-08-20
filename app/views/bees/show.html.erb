@@ -30,7 +30,9 @@
   <li class="list-group-item ">A booking has been confimed between <%= booking.start_date %> and <%= booking.end_date %> with <%= booking.user.name %> <%= link_to "❌ Cancel", booking_path(booking), class: "btn btn-danger", method: :patch, data: { confirm: "Cancel booking with #{booking.user.name}? "} %> </li>
   <% end %>
   <% end %>
+
 </ul>
 </div>
+<br><br><br><br>
 
 

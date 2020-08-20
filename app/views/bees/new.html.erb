@@ -4,7 +4,8 @@
 	<%= f.input :description %>
 	<%= f.input :features, collection: Bee::FEATURES %>
 	<%= f.input :address %>
+	<%= f.input :image, as: :file %>
 	<%= f.submit "Breed a bee!", class: "btn btn-warning" %>
-	<%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
 	<% end %>
 </div>
+<br><br>
