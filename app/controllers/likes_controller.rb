@@ -1,7 +1,12 @@
 class LikesController < ApplicationController
-	before_action :find_bee
+	
+	def index
+		@likes = Like.where(user_id: current_user.id)
+	end
+
 
 	def create
+		find_bee
 		if already_liked?
 			flash.alert = "You can't like a bee more than once"
 
@@ -10,6 +15,8 @@ class LikesController < ApplicationController
 			redirect_to bee_path(@bee)
 		end
 	end  
+
+
 
 	private  
 
