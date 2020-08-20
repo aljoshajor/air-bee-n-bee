@@ -16,15 +16,15 @@ user_1.save
 user_2 = User.new(name: "I love Bees!", password: "123456", email: "test@test.com")
 user_2.save
 
-Bee.create(name: "david", description: "one REALLY funky bee", user_id: user_1.id, features: FEATURES.sample, address: "Viktoriapark, Berlin")
+Bee.create(name: "david", description: "one REALLY funky bee", user_id: user_1.id, features: "Funky", address: "Viktoriapark, Berlin", image: "bee-big")
 puts "saving"
-Bee.create(name: "michael", description: "one REALLY vindictive bee", user_id: user_1.id, features: FEATURES.sample, address: "Rudi-Dutschke-Straße 26, 10969 Berlin" )
+Bee.create(name: "michael", description: "one REALLY vindictive bee", user_id: user_1.id, features: "Dramatic", address: "Rudi-Dutschke-Straße 26, 10969 Berlin", image: "4" )
 puts "saving"
-Bee.create(name: "felix", description: "one REALLY hilarious bee", user_id: user_2.id, features: FEATURES.sample, address: "Am Wriezener Bahnhof, 10243 Berlin" )
+Bee.create(name: "felix", description: "one REALLY hilarious bee", user_id: user_2.id, features: "Crazy", address: "Am Wriezener Bahnhof, 10243 Berlin", image: "bee-face" )
 puts "saving"
-Bee.create(name: "cleopatra", description: "one REALLY coool bee", user_id: user_2.id, features: FEATURES.sample, address: "Rosa-Luxemburg-Platz, 10178 Berlin" )
+Bee.create(name: "cleopatra", description: "one REALLY coool bee", user_id: user_2.id, features: "Cool", address: "Rosa-Luxemburg-Platz, 10178 Berlin", image: "e" )
 puts "saving"
-Bee.create(name: "fridolin", description: "one REALLY friendly bee", user_id: user_1.id, features: FEATURES.sample, address: "Platz der Republik 1, 11011 Berlin" )
+Bee.create(name: "fridolin", description: "one REALLY friendly bee", user_id: user_1.id, features: "Sexy", address: "Platz der Republik 1, 11011 Berlin", image: "11" )
 puts "saving"
-Bee.create(name: "frank", description: "one REALLY funny bee", user_id: user_2.id, features: FEATURES.sample, address: "Mehringdamm 32, 10961 Berlin" )
+Bee.create(name: "frank", description: "one REALLY funny bee", user_id: user_2.id, features: "Funny", address: "Mehringdamm 32, 10961 Berlin", image: "mitte" )
 puts "saving"

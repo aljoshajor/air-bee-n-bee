@@ -1,12 +1,12 @@
 <div class="container">
-<%= simple_form_for(@bee) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :features, collection: Bee::FEATURES %>
-  <%= f.input :address %>
-  <%= f.submit "Breed a bee!", class: "btn btn-warning" %>
-   <%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
-   <%= link_to 'Back to Homepage', root_path, class: "btn btn-primary" %>
+	<%= simple_form_for(@bee) do |f| %>
+	<%= f.input :name %>
+	<%= f.input :description %>
+	<%= f.input :features, collection: Bee::FEATURES %>
+	<%= f.input :address %>
+	<%= f.submit "Breed a bee!", class: "btn btn-warning" %>
+	<%= link_to 'See all Bees', bees_path, class: "btn btn-primary" %>
+	<%= link_to 'Back to Homepage', root_path, class: "btn btn-primary" %>
 
-<% end %>
+	<% end %>
 </div>
