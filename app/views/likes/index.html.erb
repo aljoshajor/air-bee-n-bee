@@ -1,0 +1,46 @@
+<% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
+
+<% if @likes.count > 1 %>
+<h1>You have liked <%= @likes.count %> Bees</h1>
+<% else %>
+<h1>You have liked <%= @likes.count %> Bee</h1>
+<% end %>
+<% @likes.each do |like| %>
+	<div class="card card-bee mb-3"  style="max-width: 540px;">
+					<div class="row no-gutters">
+						<div class="col-md-4 rounded">
+							<% if like.bee.features == "Cool" %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #2cf4d6; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% elsif like.bee.features == "Funny" %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f265b7; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% elsif like.bee.features == "Dramatic" %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #bc64ef; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% elsif like.bee.features == "Interesting" %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #63a1ed; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% elsif like.bee.features == "Funky" %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% elsif like.bee.features == "Sexy" %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f28b65; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% else %>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #65f2c5; opacity: 0.95"><%= like.bee.features.downcase %></p></div>
+							<%= image_tag image_path("#{beepic.sample}"), alt: "alttext", class: "card-img" %>
+							<% end %>
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title" id="card-bee-title"><%= like.bee.name %></h5>
+								<p class="card-text"><%= like.bee.description %>.</p>
+								<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+								<%= link_to "Details & Booking", bee_path(like.bee), class: "btn btn-primary" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>
+			</div>
