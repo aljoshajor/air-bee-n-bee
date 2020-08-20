@@ -9,13 +9,14 @@
       <div class="col-md-8">
           <div class="card-body">
             <h1><%= @bee.name %> is a great bee!</h1>
-            <h4>owned by <strong><%= @bee.user.name %></strong></h4>
-            <h5><%= @bee.description %></h5>
+            <h5> <%= @bee.address %> </h5>
+            <h4>owned by <strong><%= @bee.user.name.capitalize %></strong></h4>
+            <p><%= @bee.user.name.capitalize %> has described <%= @bee.name.capitalize %> as a <%= @bee.features.downcase %> bee and it is clear to see why! From producing honey to disarming landmines you can "bee" sure that <%= @bee.name.capitalize %> will do it in a <%= @bee.features.downcase %> way!</p>
+            <a> <%= link_to 'Back to Hompage', root_path, class: "btn btn-primary" %></a>
             <h5> Popularity: <%= @bee.name %> received <%= @bee.likes.count %> <%= (@bee.likes.count) == 1 ? '♥︎' : '♥︎'%> so far!</h5>
             <br>
              <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
             <%= button_to '♥︎ Bee', bee_likes_path(@bee), method: :post, class: "btn btn-primary" %>
-
         </div>
      </div>
     </div>
