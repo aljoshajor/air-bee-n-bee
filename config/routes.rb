@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :bees do
     resources :bookings, only: [:new, :create]
-    resources :likes
+    resources :likes, only: [:new, :create]
   end
   resources :bookings, only: [:update]
+  resources :likes
 
 
 	# get 'bees/new', to: 'bees#new'

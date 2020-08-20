@@ -26,6 +26,9 @@
         <li class="nav-item">
           <%= link_to "Add a bee", new_bee_path, class: "nav-link" %>
         </li>
+        <li>
+              <%= link_to "Favourited bees", likes_path, class: "nav-link" %>
+            </li>
         <li class="nav-item dropdown">
           <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
           <%= image_tag image_path("beekeeper"), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
