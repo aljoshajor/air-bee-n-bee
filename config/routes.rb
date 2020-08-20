@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
     resources :likes, only: [:new, :create]
   end
-  resources :bookings, only: [:update]
+  resources :bookings, only: [:update, :index]
   resources :likes
 
 
