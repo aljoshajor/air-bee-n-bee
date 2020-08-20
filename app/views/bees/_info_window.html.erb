@@ -1,6 +1,6 @@
 		<% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
   
-  <div class="card card-bee mb-3"  style="max-width: 540px;">
+  <div class="card-map mb-3"  style="max-width: 540px;">
 					<div class="row no-gutters">
 						<div class="col-md-4 rounded">
 							<% if bee.features == "Cool" %>
@@ -28,7 +28,7 @@
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
+								<h5 class="card-title" id="card-map-title"><%= bee.name %></h5>
 								<p class="card-text"><%= bee.description %>.</p>
 								<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
 								<%= link_to "Details & Booking", bee_path(bee), class: "btn btn-primary" %>

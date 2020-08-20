@@ -6,14 +6,19 @@
   text-align: center;
 }
 
-.card-bee {
+.card-map {
   border-radius: 20px;
-  box-shadow: none;
-  transition: none;
+  transition: 0.5s ease;
   cursor: pointer;
+
 }
 
-.card:hover {
-  transform: none;
-  box-shadow: none;
+.card-map-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#card-map-title {
+  font-family: $body-font;
+  border-radius: 8px;
 }
