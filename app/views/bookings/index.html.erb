@@ -1,16 +1,24 @@
 <div class="container">
-	<h1><%= current_user.name %>'s bookings:</h1>
-	<br><br>
-	<% @bookings.each do |booking| %>
-	<% if booking.accepted %>
-	<h2>You have a booking with <em><%= booking.bee.name.capitalize %> the Bee</h2></em>
-	<% else %>
-	<h2>You have an unconfirmed booking with <%= booking.bee.name.capitalize %> the Bee</h2>
-	<p><%= booking.bee.user.name %> has not accepted your booking yet! </p>
-	<% end %>
-	<p>Start date: <%= booking.start_date %></p>  
-	<p>End date: <%= booking.end_date %></p>
-	<p class="font-weight-bold">Have fun with your <%= booking.bee.features %> bee</p> 
-	<br><br>
-	<% end %>
+	<div class="bookings_card">
+    <div>
+      <h1><%= current_user.name %>'s bookings:</h1>
+    	<br><br>
+    	<% @bookings.each do |booking| %>
+    	<% if booking.accepted %>
+    	<h2>You have a booking with <em><%= booking.bee.name.capitalize %> the Bee</h2></em>
+    	<% else %>
+    	<h2>You have an unconfirmed booking with <%= booking.bee.name.capitalize %> the Bee</h2>
+    	<p><%= booking.bee.user.name %> has not accepted your booking yet! </p>
+    	<% end %>
+    	<p>Start date: <%= booking.start_date %></p>
+    	<p>End date: <%= booking.end_date %></p>
+    	<p class="font-weight-bold">Have fun with your <%= booking.bee.features %> bee</p>
+    	<br><br>
+    	<% end %>
+    </div>
+    <div>
+      <p>Foto</p>
+      <%#= image_tag image_path("#{bee.image}"), alt: "alttext", class: "card-img" %>
+    </div>
+  </div>
 </div>
