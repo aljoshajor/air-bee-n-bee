@@ -11,9 +11,9 @@ Bee.destroy_all
 
 FEATURES = ["Cool", "Funny", "Dramatic", "Interesting", "Funky", "Sexy", "Crazy"]
 
-user_1 = User.new(name: "Bee Fan 42069", password: "123456", email: "joe@fakeemail.com")
+user_1 = User.new(name: "BeeFan42069", password: "123456", email: "joe@fakeemail.com")
 user_1.save
-user_2 = User.new(name: "I love Bees!", password: "123456", email: "test@test.com")
+user_2 = User.new(name: "BuzzBoy", password: "123456", email: "test@test.com")
 user_2.save
 
 Bee.create(name: "david", description: "one REALLY funky bee", user_id: user_1.id, features: "Funky", address: "Viktoriapark, Berlin", image: "bee-big")
