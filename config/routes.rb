@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :bees do
     resources :bookings, only: [:new, :create]
+    resources :likes
   end
   resources :bookings, only: [:update]
 

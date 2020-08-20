@@ -1,8 +1,7 @@
 <% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>	
 
 <div class="container">
-
-  <div class="card card-bee mb-3" style="max-width: 800px;">
+ <div class="card card-bee mb-3" style="max-width: 800px;">
     <div class="row no-gutters">
       <div class="col-md-4">
         <img src="<%= image_path("#{beepic.sample}") %>" class="card-img" alt="Card image cap">
@@ -15,12 +14,16 @@
             <a> <%= link_to 'Back to Hompage', root_path, class: "btn btn-primary" %></a>
             <%= link_to 'See all Bees', bees_path, class: "btn btn-black" %>
             <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
+            <br>
+            <%= button_to 'Like', bee_likes_path(@bee), method: :post, class: "btn btn-outline-warning btn-sm" %>
+            <p><%= @bee.likes.count %> <%= (@bee.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         </div>
      </div>
     </div>
   </div>
  
 <br>
+
 <ul class="list-group">
   <% @bee.bookings.each do |booking| %>
   <% if booking.accepted == false %>
@@ -31,3 +34,5 @@
   <% end %>
 </ul>
 </div>
+
+
