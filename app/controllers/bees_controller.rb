@@ -16,29 +16,19 @@ class BeesController < ApplicationController
     @bee = Bee.new
   end
 
-    def create
-      @bee = Bee.new(bee_params)
-      @bee.user_id = current_user.id
-        if  @bee.save
-          redirect_to bee_path(@bee)
-        else
-          render :new
-        end
-    end
-
-    def show
-      @bee = Bee.find(params[:id])
-    end
-
   def create
     @bee = Bee.new(bee_params)
     @bee.user_id = current_user.id
+    @bee.image = "bee-face"
     if  @bee.save
       redirect_to bee_path(@bee)
     else
       render :new
-
     end
+  end
+
+  def show
+    @bee = Bee.find(params[:id])
   end
 
   def show
