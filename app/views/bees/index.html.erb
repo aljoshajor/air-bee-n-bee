@@ -18,32 +18,33 @@
 					<div class="row no-gutters">
 						<div class="col-md-4 rounded">
 							<% if bee.features == "Cool" %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #2cf4d6; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #2cf4d6; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% elsif bee.features == "Funny" %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f265b7; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f265b7; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% elsif bee.features == "Dramatic" %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #bc64ef; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #bc64ef; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% elsif bee.features == "Interesting" %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #63a1ed; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #63a1ed; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% elsif bee.features == "Funky" %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #F4CA65; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% elsif bee.features == "Sexy" %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f28b65; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #f28b65; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% else %>
-							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #65f2c5; opacity: 0.95"><%= bee.features.downcase %></p></div>
+							<div class="card-img-overlay text-white  text-center" style="width: 120px;"><p class= "rounded-bottom rounded-top" style="background-color: #65f2c5; opacity: 0.95"><%= bee.features.downcase %></p>  </div>
 							<%= image_tag image_path("#{beepic[index]}"), alt: "alttext", class: "card-img" %>
 							<% end %>
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title" id="card-bee-title"><%= bee.name %></h5>
-								<p class="card-text"><%= bee.description %>.</p>
+								<h5 class="card-title" id="card-bee-title font-weight-bold"><%= bee.name.capitalize %></h5>
+								<p class="card-text"><%= bee.description %>. <br> <span class="font-weight-light"> Location: <%= bee.address %> </span></p> 
+
 								<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
 								<%= link_to "Details & Booking", bee_path(bee), class: "btn btn-primary" %>
 							</div>
@@ -53,16 +54,14 @@
 				<% end %>
 			</div>
 
-			<div class="col-6">
-				<img class="index_map" src="<%= image_path('map_example.jpg') %>" alt="Card image cap">
-			</div>
-		</div>
-
-		<div id="map"
-			style="width: 100%; height: 600px;"
+			<div class="col-6 mb-4">
+				<div id="map"
+			style="width: 100%; height: 100%;"
 			data-markers="<%= @markers.to_json %>"
 			data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 	 </div>
+			</div>
+		</div>
 
 	</div>
 
