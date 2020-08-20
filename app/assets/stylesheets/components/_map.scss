@@ -1,0 +1,19 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+}
+
+.card-bee {
+  border-radius: 20px;
+  box-shadow: none;
+  transition: none;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: none;
+  box-shadow: none;
+}

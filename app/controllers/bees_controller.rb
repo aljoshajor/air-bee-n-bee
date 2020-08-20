@@ -1,7 +1,15 @@
 class BeesController < ApplicationController
 
   def index
-    @bees = Bee.all
+    @bees = Bee.all.geocoded
+    @markers = @bees.map do |bee|
+      {
+        lat: bee.latitude,
+        lng: bee.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bee: bee }),
+        image_url: helpers.asset_url('Bee-custom-marker.png')
+      }
+    end
   end
 
   def new
@@ -44,3 +52,8 @@ class BeesController < ApplicationController
   end
 
 end
+
+
+
+
+

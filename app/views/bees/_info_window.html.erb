@@ -1,20 +1,6 @@
-	<% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
-
-	<div class="container">
-
-		<div class="row">
-			<div class="BeeButton">
-				<%= link_to 'Add a new Bee', new_bee_path, class: "btn btn-primary" %>
-			</div>
-			<div>
-				<img src="<%= image_path('flyingBee.png') %>" class="beeicon">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-6">
-				<% @bees.each do |bee| %>
-				<div class="card card-bee mb-3"  style="max-width: 540px;">
+		<% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
+  
+  <div class="card card-bee mb-3"  style="max-width: 540px;">
 					<div class="row no-gutters">
 						<div class="col-md-4 rounded">
 							<% if bee.features == "Cool" %>
@@ -50,20 +36,3 @@
 						</div>
 					</div>
 				</div>
-				<% end %>
-			</div>
-
-			<div class="col-6">
-				<img class="index_map" src="<%= image_path('map_example.jpg') %>" alt="Card image cap">
-			</div>
-		</div>
-
-		<div id="map"
-			style="width: 100%; height: 600px;"
-			data-markers="<%= @markers.to_json %>"
-			data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-	 </div>
-
-	</div>
-
-	<!-- ["Cool", "Funny", "Dramatic", "Interesting", "Funky", "Sexy", "Crazy"] -->
