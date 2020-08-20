@@ -10,13 +10,12 @@
           <div class="card-body">
             <h1><%= @bee.name %> is a great bee!</h1>
             <h4>owned by <strong><%= @bee.user.name %></strong></h4>
-            <p><%= @bee.description %></p>
-            <a> <%= link_to 'Back to Hompage', root_path, class: "btn btn-primary" %></a>
-            <%= link_to 'See all Bees', bees_path, class: "btn btn-black" %>
-            <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
+            <h5><%= @bee.description %></h5>
+            <h5> Popularity: <%= @bee.name %> received <%= @bee.likes.count %> <%= (@bee.likes.count) == 1 ? '♥︎' : '♥︎'%> so far!</h5>
             <br>
-            <%= button_to 'Like', bee_likes_path(@bee), method: :post, class: "btn btn-outline-warning btn-sm" %>
-            <p><%= @bee.likes.count %> <%= (@bee.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+             <%= link_to 'Book me', new_bee_booking_path(@bee), class: "btn btn-primary" %>
+            <%= button_to '♥︎ Bee', bee_likes_path(@bee), method: :post, class: "btn btn-primary" %>
+
         </div>
      </div>
     </div>
