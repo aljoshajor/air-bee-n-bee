@@ -60,3 +60,50 @@
   margin-left: 260px;
   padding-top: 100px;
 }
+
+.new-bee-background-image {
+  position: absolute;
+  top: 10px;
+  left: 170px;
+  height: 600px;
+  width: 70%;
+  opacity: 0.5;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 30px 0px 30px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 6px rgb(61, 61, 61);
+}
+
+.new-bee-form {
+  position: relative;
+  width: 60%;
+  margin-left: 260px;
+  padding-top: 30px;
+}
+
+.container_new-bee {
+  position: relative;
+  min-height: 650px;
+}
+
+.new-bee-headline {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Alata", sans-serif;
+  color: #fafafa;
+  text-shadow: 2px 2px rgb(87, 87, 87);
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-container {
+  margin-top: 15px;
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+}
