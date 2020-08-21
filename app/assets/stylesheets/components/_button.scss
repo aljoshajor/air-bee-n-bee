@@ -1,20 +1,20 @@
- .btn {
-  display: inline-block;
-  border-radius: 20px;
-  background: #f5cb5c;
-  color: white;
-  padding: 12px 22px;
+ .btn-primary {
+  display: inline-block !important;
+  border-radius: 20px !important;
+  background: #f5cb5c !important;
+  color: white !important;
+  padding: 12px 22px !important;
   // font-weight: bold;
-  border: 1.5px solid white;
-  opacity: 0.8;
+  border: 1.5px solid white !important;
+  opacity: 0.8 !important;
   // font-family: $banner;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
 
  }
 
- .btn:hover {
-  background: black;
-  color: #f5cb5c;
+ .btn-primary:hover {
+  background: black !important;
+  color: #f5cb5c !important;
 
  }
 
