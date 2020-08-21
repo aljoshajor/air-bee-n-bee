@@ -1,21 +1,29 @@
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 250px;
+  background: #ffffff00 !important;
+  background-color: #ffffff00 !important;
+  box-shadow: 0 !important;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
+  background: #ffffff00 !important;
+  background-color: #ffffff00 !important;
+  box-shadow: 0 !important;
 }
 
 .card-map {
   border-radius: 20px;
   transition: 0.5s ease;
   cursor: pointer;
-
+	background-color: white;
+	box-shadow: 0 !important;
 }
 
 .card-map-img-top {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    box-shadow: 0 !important;
 }
 
 #card-map-title {
