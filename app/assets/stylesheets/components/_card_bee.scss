@@ -1,8 +1,13 @@
 .card-bee {
   border-radius: 20px;
-  box-shadow: 3px 3px 5px gray;
+  box-shadow: 3px 3px 3px gray;
   transition: 0.5s ease;
   cursor: pointer;
+  // font-family: $banner;
+
+  // p {
+  //   $body-font: 'Montserrat';
+  // }
 
 }
 
@@ -12,11 +17,33 @@
 }
 
 #card-bee-title {
-  font-family: $body-font;
+  font-family: $banner;
   border-radius: 8px;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 2px 2px 40px rgba(0,0,0,0.9);
+  transform: scale(1.008);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+}
+
+.style {
+  margin: 100px auto 200px auto;
+
+  h1 {
+  $banner: 'Alata', sans-serif !important;
+  font-size: 33px;
+
+  }
+
+    h5 {
+  $banner: 'Alata', sans-serif !important;
+  font-size: 22px;
+
+  }
+
+  p {
+    font-size: 18px;
+    $body-font: 'Montserrat';
+  }
+
 }
