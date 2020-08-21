@@ -1,11 +1,15 @@
 <div class="container">
 <% if @likes.count > 1 %>
-<h1>You have favourited <%= @likes.count %> Bees</h1>
+<h1 class="text-center">
+You have favourited ♥︎ <%= @likes.count %> Bees </h1>
 <% else %>
-<h1>You have favourited <%= @likes.count %> Bee</h1>
+<h1 class="text-center">
+You have favourited ♥︎ <%= @likes.count %> Bee </h1>
 <% end %>
+
+<br>
 <% @likes.each do |like| %>
-	<div class="card card-bee mb-3"  style="max-width: 540px;">
+	<div class="card card-bee mb-3"  style="max-width: 700px;">
 					<div class="row no-gutters">
 						<div class="col-md-4 rounded">
 							<% if like.bee.features == "Cool" %>
