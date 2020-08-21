@@ -19,7 +19,7 @@ class BeesController < ApplicationController
   def create
     @bee = Bee.new(bee_params)
     @bee.user_id = current_user.id
-    @bee.image = "bee-face"
+    @bee.image = "n"
     if  @bee.save
       redirect_to bee_path(@bee)
     else
@@ -44,6 +44,6 @@ class BeesController < ApplicationController
 end
 
 
-
+##
 
 

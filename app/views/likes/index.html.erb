@@ -1,9 +1,9 @@
 <% beepic = ['bee-closeup3','bee-closeup2', 'bee-banner', 'bee-closeup', 'bee-small', 'bee-small1']  %>
 
 <% if @likes.count > 1 %>
-<h1>You have liked <%= @likes.count %> Bees</h1>
+<h1>You have ♥︎ <%= @likes.count %> Bees</h1>
 <% else %>
-<h1>You have liked <%= @likes.count %> Bee</h1>
+<h1>You have ♥︎ <%= @likes.count %> Bee</h1>
 <% end %>
 <% @likes.each do |like| %>
 	<div class="card card-bee mb-3"  style="max-width: 540px;">
