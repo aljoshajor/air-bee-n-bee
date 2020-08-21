@@ -2,10 +2,10 @@
 
 <div class="container_new-bee">
   <div class="new-bee-background-image" style="background-image: url('<%= image_path 'bee-background2' %>')"></div>
-	
+
 	<div class="new-bee-form">
 		<div class="flex-container">
-			<h1 class="new-bee-headline"><strong>Breed your own bee !</strong> </h1> 
+			<h1 class="new-bee-headline"><strong>Breed your own bee !</strong> </h1>
 			<img src="<%= image_path('new-bee-icon.png') %>" class="beeicon">
 		</div>
 			<%= simple_form_for(@bee) do |f| %>
@@ -14,7 +14,7 @@
 			<%= f.input :features, collection: Bee::FEATURES %>
 			<%= f.input :address %>
 			<%= f.input :image, as: :file %>
-			<%= f.submit "Breed a Bee!", class: "btn btn-warning" %>
+			<%= f.submit "Breed a Bee!", class: "btn btn-bl" %>
 			<% end %>
 	</div>
 </div>

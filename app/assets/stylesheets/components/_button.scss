@@ -17,3 +17,23 @@
   color: #f5cb5c;
 
  }
+
+ .btn-bl {
+  display: inline-block;
+  border-radius: 20px;
+  background: black;
+  color: #f5cb5c;
+  padding: 12px 22px;
+  // font-weight: bold;
+  border: 1.5px solid white;
+  opacity: 0.8;
+  // font-family: $banner;
+  font-family: 'Montserrat', sans-serif;
+
+ }
+
+ .btn:hover {
+  background: #f5cb5c;
+  color: white;
+
+ }
