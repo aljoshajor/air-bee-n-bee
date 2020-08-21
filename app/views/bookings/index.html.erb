@@ -1,16 +1,39 @@
 <div class="container">
-	<h1><%= current_user.name %>'s bookings:</h1>
-	<br><br>
-	<% @bookings.each do |booking| %>
-	<% if booking.accepted %>
-	<h2>You have a booking with <em><%= booking.bee.name.capitalize %> the Bee</h2></em>
-	<% else %>
-	<h2>You have an unconfirmed booking with <%= booking.bee.name.capitalize %> the Bee</h2>
-	<p><%= booking.bee.user.name %> has not accepted your booking yet! </p>
-	<% end %>
-	<p>Start date: <%= booking.start_date %></p>  
-	<p>End date: <%= booking.end_date %></p>
-	<p class="font-weight-bold">Have fun with your <%= booking.bee.features %> bee</p> 
-	<br><br>
-	<% end %>
+    <div class="header_bookings_container">
+      <h1 class="header_bookings"><%= current_user.name %>'s bookings:</h1>
+    	<br><br>
+    </div>
+
+<% @bookings.each do |booking| %>
+    <div class="card card-edges">
+      <!-- <div class="img-flex"> -->
+        <div class="left_part">
+          <div class="card-header">
+              <% if booking.accepted %>
+              <p class="font-weight-bold">You have a booking with <em><%= booking.bee.name.capitalize %> the Bee</p></em>
+               <p><%= booking.bee.user.name %> has accepted your booking! </p>
+              <% else %>
+              <p class="font-weight-bold">You have an unconfirmed booking with <em><%= booking.bee.name.capitalize %> the Bee</p></em>
+              <p><%= booking.bee.user.name %> has not accepted your booking yet! </p>
+              <% end %>
+          </div>
+
+          <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>Start date: <%= booking.start_date %></p>
+                <p>End date: <%= booking.end_date %></p>
+                <p class="font-weight-bold">Have fun with your <%= booking.bee.features %> bee</p>
+              </blockquote>
+          </div>
+       <!--   </div> -->
+    </div>
+    <div class="image-booking">
+       <%= image_tag image_path("#{booking.bee.image}"), alt: "alttext"%>
+      </div>
+  </div>
+ <% end %>
+
+<br>
+<br>
+
 </div>
