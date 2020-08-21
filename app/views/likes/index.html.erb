@@ -1,8 +1,8 @@
 <div class="container">
 <% if @likes.count > 1 %>
-<h1>You have favourited <%= @likes.count %> Bees</h1>
+<div class="liked-bees-headline"><h1 class="liked-bees-h1">You have favourited <%= @likes.count %> Bees</h1></div>
 <% else %>
-<h1>You have favourited <%= @likes.count %> Bee</h1>
+<div class="liked-bees-headline"><h1 class="liked-bees-h1">You have favourited <%= @likes.count %> Bee</h1></div>
 <% end %>
 <% @likes.each do |like| %>
 	<div class="card card-bee mb-3"  style="max-width: 540px;">
