@@ -15,16 +15,20 @@ user_1 = User.new(name: "BeeFan42069", password: "123456", email: "joe@fakeemail
 user_1.save
 user_2 = User.new(name: "BuzzBoy", password: "123456", email: "test@test.com")
 user_2.save
+user_3 = User.new(name: "HoneyQueen", password: "123456", email: "test2@test.com")
+user_3.save
+user_4 = User.new(name: "LeWagon432", password: "123456", email: "test3@test.com")
+user_4.save
 
-Bee.create(name: "david", description: "one REALLY funky bee", user_id: user_1.id, features: "Funky", address: "Viktoriapark, Berlin", image: "bee-big")
+Bee.create(name: "David", description: "One REALLY funky bee. Likes disco", user_id: user_1.id, features: "Funky", address: "Viktoriapark, Berlin", image: "bee-big")
 puts "saving"
-Bee.create(name: "michael", description: "one REALLY dramatic bee", user_id: user_1.id, features: "Dramatic", address: "Rudi-Dutschke-Straße 26, 10969 Berlin", image: "4" )
+Bee.create(name: "Michael", description: "One REALLY dramatic bee, dislikes cheese", user_id: user_2.id, features: "Dramatic", address: "Rudi-Dutschke-Straße 26, Berlin", image: "4" )
 puts "saving"
-Bee.create(name: "felix", description: "one REALLY Crazy bee", user_id: user_2.id, features: "Crazy", address: "Am Wriezener Bahnhof, 10243 Berlin", image: "bee-face" )
+Bee.create(name: "Felix", description: "A REALLY Crazy bee, unsuitable for commercial use", user_id: user_3.id, features: "Crazy", address: "Am Wriezener Bahnhof, Berlin", image: "bee-face" )
 puts "saving"
-Bee.create(name: "cleopatra", description: "one REALLY cooool bee", user_id: user_2.id, features: "Cool", address: "Rosa-Luxemburg-Platz, 10178 Berlin", image: "e" )
+Bee.create(name: "Cleopatra", description: "A super cool bee - studied fashion marketing at King's College, London", user_id: user_4.id, features: "Cool", address: "Rosa-Luxemburg-Platz, Berlin", image: "e" )
 puts "saving"
-Bee.create(name: "fridolin", description: "one REALLY Sexy bee", user_id: user_1.id, features: "Sexy", address: "Platz der Republik 1, 11011 Berlin", image: "11" )
+Bee.create(name: "Fridolin", description: "A sexy bee - too hot to handle", user_id: user_1.id, features: "Sexy", address: "Platz der Republik 1, Berlin", image: "11" )
 puts "saving"
-Bee.create(name: "frank", description: "one REALLY funny bee", user_id: user_2.id, features: "Funny", address: "Mehringdamm 32, 10961 Berlin", image: "mitte" )
+Bee.create(name: "Frank", description: "A pretty funny bee", user_id: user_3.id, features: "Funny", address: "Mehringdamm 32, Berlin", image: "mitte" )
 puts "saving"
