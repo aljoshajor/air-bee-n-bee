@@ -1,10 +1,8 @@
 <div class="container">
 <% if @likes.count == 1 %>
-<h1 class="text-center">
-You have  <%= @likes.count %> favourite Bee ♥︎ </h1>
+<div class="liked-bees-headline"><h1 class="liked-bees-h1">You have  <%= @likes.count %> favourite Bee ♥︎</h1></div>
 <% else %>
-<h1 class="text-center">
-You have  <%= @likes.count %> favourite Bees ♥︎ </h1>
+<div class="liked-bees-headline"><h1 class="liked-bees-h1">You have  <%= @likes.count %> favourite Bees ♥︎</h1></div>
 <% end %>
 
 <br>
