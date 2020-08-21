@@ -1,6 +1,14 @@
-<%= simple_form_for [@bee, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Book me!", class: "btn btn-warning" %>
-<% end %>
 
+
+<div class="container_booking">
+  <div class="XYZ" style="background-image: url('<%= image_path 'bee_background' %>')"></div>
+  <div class="booking-form">
+      <h4>When do you want to book <strong><%= @bee.name %></strong> ? </h4>
+        <br>
+          <%= simple_form_for [@bee, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.submit "Book me!", class: "btn btn-warning" %>
+          <% end %>
+    </div>
+</div>
